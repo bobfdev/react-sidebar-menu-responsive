@@ -5,6 +5,7 @@
     inset: 0 75% 0 0;
     /* inset means top: 0, left: 0, right: 0, bottom: 0 */
     background-color: hsla(0, 40%, 98%, 0.092);
+    backdrop-filter: blur(0.5rem);
 }
 
 .header-mobile {
@@ -47,6 +48,7 @@ nav .ul-item li {
 
 nav .ul-item li:hover {
     background-color: rgb(66, 81, 52);
+    transition: 1s ease;
 }
 
 nav .ul-item li .icon {
@@ -72,4 +74,28 @@ nav .ul-item li a {
     margin-block: 0.5rem;
     cursor: pointer;
     font-size: 30px;
+}
+
+
+@media (max-width: 900px) {
+    .header-mobile {
+        inset: 0 90% 0 0;
+        justify-content: center;
+    }
+
+    nav .ul-item {
+        display: none;
+    }
+
+    nav .ul-item.oicon {
+        display: flex;
+    }
+
+    .menu-icon {
+        display: none;
+    }
+
+    nav .ul-item li .icon {
+        font-size: clamp(1rem, 2vw + 1rem, 4rem);
+    }
 }
